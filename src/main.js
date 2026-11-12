@@ -11,6 +11,7 @@ import { createProfileDialog } from './ui/profile-dialog.js';
 import { initMusicPlayer } from './ui/music-player.js';
 import { initSocialLinks } from './ui/social-links.js';
 import { initBrainIntro } from './features/brain-intro.js';
+import { initBrainFloat } from './features/brain-float.js';
 import { initInkTrail } from './features/ink-trail.js';
 import { initMechanisms } from './features/mechanisms.js';
 import { initTerminals } from './features/terminals.js';
@@ -62,6 +63,7 @@ scope.add(initTerminals({ router, content: terminalContent, reducedMotion }));
 scope.add(initMechanisms());
 scope.add(initInkTrail({ reducedMotion }));
 scope.add(initBrainIntro());
+scope.add(initBrainFloat({ reducedMotion }));
 // Keep listeners for back-forward cache restoration; dispose only on a real unload.
 scope.listen(window, 'pagehide', (event) => {
   if (!event.persisted) scope.dispose();
