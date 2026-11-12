@@ -1,0 +1,40 @@
+.floating-brain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--layer-art);
+  overflow: visible;
+}
+
+.floating-brain-layer,
+.brain-float-enabled .energy-brain {
+  animation: brain-levitation 7s ease-in-out infinite;
+}
+
+.brain-intro-active .floating-brain-layer,
+.brain-intro-active .energy-brain,
+.reference-hero[hidden] .floating-brain-layer,
+.reference-hero[hidden] .energy-brain {
+  animation-play-state: paused;
+}
+
+@keyframes brain-levitation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-brain {
+    display: none;
+  }
+  .brain-float-enabled .energy-brain {
+    animation: none;
+  }
+}

@@ -1,0 +1,54 @@
+.brain-reconstruction {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--layer-intro);
+  pointer-events: none;
+}
+.brain-intro-active .circuit-energy {
+  opacity: 0;
+}
+.brain-intro-active .energy-route {
+  animation-play-state: paused;
+}
+.intro-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 9px 15px;
+  background: #eee6d5e8;
+  border: 1px solid #a58b65;
+  color: #62472e;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+.intro-controls button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #8b6841;
+  padding: 3px 0;
+  font-size: 11px;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .intro-controls {
+    font-size: 8px;
+    gap: 10px;
+    bottom: 12%;
+    max-width: 90%;
+    padding: 6px 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brain-reconstruction,
+  .intro-controls {
+    display: none;
+  }
+}

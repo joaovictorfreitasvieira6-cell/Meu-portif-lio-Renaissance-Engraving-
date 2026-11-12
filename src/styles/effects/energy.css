@@ -1,0 +1,136 @@
+.circuit-energy {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--layer-effects);
+  overflow: hidden;
+  mix-blend-mode: screen;
+}
+.energy-route {
+  fill: none;
+  stroke: #ffe6a0;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 58 350;
+  stroke-dashoffset: 408;
+  opacity: 0;
+  animation: engraved-current 5s linear infinite;
+  filter: drop-shadow(0 0 3px #ffcb60) drop-shadow(0 0 7px #eaaa37);
+}
+.energy-route:nth-child(2) {
+  animation-delay: -1.1s;
+  animation-duration: 5.6s;
+}
+.energy-route:nth-child(3) {
+  animation-delay: -3.2s;
+  animation-duration: 4.4s;
+}
+.energy-route:nth-child(4) {
+  animation-delay: -2.1s;
+  animation-duration: 5.3s;
+}
+.energy-route:nth-child(5) {
+  animation-delay: -4.5s;
+  animation-duration: 5.8s;
+}
+.energy-route:nth-child(6) {
+  animation-delay: -0.6s;
+  animation-duration: 4.8s;
+}
+.energy-portrait .energy-route {
+  stroke: #ffecb5;
+  stroke-width: 2.6;
+  animation-duration: 4.6s;
+}
+.energy-portrait .energy-route:nth-child(2) {
+  animation-delay: -2.4s;
+}
+.energy-portrait .energy-route:nth-child(3) {
+  animation-delay: -3.7s;
+}
+.energy-portrait .energy-route:nth-child(4) {
+  animation-delay: -1.3s;
+}
+.reference-hero[hidden] .energy-route {
+  animation-play-state: paused;
+}
+@keyframes engraved-current {
+  0% {
+    stroke-dashoffset: 408;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .circuit-energy {
+    display: none;
+  }
+}
+.energy-brain .energy-route {
+  stroke-dasharray: 16 84;
+  stroke-dashoffset: 16;
+  animation: processor-current 5s linear infinite;
+  animation-delay: calc(var(--branch, 0) * -0.37s);
+}
+.energy-brain .energy-route:nth-of-type(3n) {
+  --branch: 3;
+}
+.energy-brain .energy-route:nth-of-type(3n + 1) {
+  --branch: 1;
+}
+.energy-brain .energy-route:nth-of-type(4n) {
+  --branch: 5;
+}
+.processor-heart {
+  fill: none;
+  stroke: #ffe5a3;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 5px #e5b358);
+  animation: processor-heartbeat 5s ease-in-out infinite;
+}
+@keyframes processor-current {
+  0% {
+    stroke-dashoffset: 16;
+    opacity: 0;
+  }
+  7% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -100;
+    opacity: 0;
+  }
+}
+@keyframes processor-heartbeat {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  15%,
+  45% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.35;
+  }
+}
+.reference-hero[hidden] .processor-heart,
+.brain-intro-active .processor-heart {
+  animation-play-state: paused;
+}

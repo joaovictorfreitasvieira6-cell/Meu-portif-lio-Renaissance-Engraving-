@@ -1,0 +1,50 @@
+.reference-page {
+  min-height: 100svh;
+}
+.reference-page main {
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+}
+.reference-hero {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+.reference-hero[hidden] {
+  display: none;
+}
+.reference-art,
+.hermes-composition {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 761px) {
+  .reference-page {
+    height: 100svh;
+    overflow: hidden;
+  }
+  .reference-page main {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+    display: block;
+  }
+  .reference-page .reference-hero {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100svh;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+  .reference-page .reference-art,
+  .reference-page .hermes-composition {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}

@@ -1,0 +1,86 @@
+.music-player {
+  position: fixed;
+  right: 16px;
+  bottom: 12px;
+  z-index: var(--layer-music);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px;
+  border: 1px solid #9e835d;
+  border-radius: 50%;
+  background: #eee5d5b3;
+  color: #513b26;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+.music-player:hover,
+.music-player:focus-within {
+  opacity: 1;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.music-player button {
+  background: transparent;
+  color: inherit;
+  border: 0;
+  padding: 3px;
+  font: inherit;
+}
+.music-player button:hover {
+  text-decoration: underline;
+}
+.music-player .music-toggle {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  font-size: 12px;
+}
+.music-player .music-label,
+.music-player > label {
+  display: none;
+}
+.music-player:is(:hover, :focus-within) .music-label,
+.music-player:is(:hover, :focus-within) > label {
+  display: block;
+}
+.music-label {
+  max-width: 170px;
+}
+.music-label span {
+  display: block;
+  font-size: 8px;
+  opacity: 0.75;
+  letter-spacing: 0.5px;
+}
+.music-player input[type='range'] {
+  width: 65px;
+  accent-color: #79543a;
+}
+body:has(.ai-chapter:not([hidden])) .music-player {
+  background: #15130feb;
+  color: #dcc49a;
+  border-color: #796240;
+}
+@media (max-width: 760px) {
+  .music-player {
+    right: 8px;
+    bottom: 8px;
+    gap: 5px;
+    font-size: 9px;
+  }
+  .music-player input[type='range'] {
+    width: 45px;
+  }
+  .music-label {
+    max-width: 120px;
+  }
+  .music-label span {
+    font-size: 7px;
+  }
+}
