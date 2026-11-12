@@ -1,0 +1,162 @@
+.ai-chapter {
+  min-height: 0;
+  aspect-ratio: 1779/884;
+  overflow: hidden;
+  background: #080807;
+  color: #e5dcc7;
+  line-height: 1.6;
+  isolation: isolate;
+}
+/* Mask text already baked into the artwork, beneath the live description. */
+.ai-chapter::before {
+  content: '';
+  position: absolute;
+  left: 5%;
+  top: 58%;
+  width: 37.5%;
+  height: 29%;
+  background: #090908;
+  pointer-events: none;
+  z-index: var(--layer-art);
+}
+.hermes-projects {
+  left: 6%;
+  top: 91%;
+  width: 17%;
+  height: 5%;
+}
+.ai-copy {
+  position: absolute;
+  left: 6%;
+  top: 59%;
+  width: 35%;
+  height: 27%;
+  z-index: var(--layer-effects);
+  padding: 10px 12px;
+  background: #090908;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #88704c #090908;
+  line-height: 1.6;
+}
+.ai-copy > h1,
+.ai-copy > .eyebrow,
+.ai-copy > .ai-lead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.ai-copy > p {
+  font-size: clamp(10px, 0.8vw, 15px);
+  margin: 0 0 var(--space-4);
+  max-width: 570px;
+  color: #c4beae;
+}
+.ai-topics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) 20px;
+}
+.ai-topics h2 {
+  font-size: clamp(12px, 1vw, 19px);
+  margin: 0 0 var(--space-2);
+  color: #dac49e;
+}
+.ai-topics p {
+  font-size: clamp(10px, 0.78vw, 15px);
+  margin: 0 0 var(--space-3);
+  color: #c4beae;
+}
+.ai-project-button {
+  padding: 12px 0;
+  margin-top: 5px;
+  border: 0;
+  border-bottom: 1px solid #b29468;
+  background: none;
+  color: #dac49e;
+  font-size: clamp(10px, 0.8vw, 15px);
+}
+.ai-chapter .previous-chapter {
+  left: 3%;
+  right: auto;
+  bottom: 1%;
+  background: #171611dc;
+  color: #dac49e;
+}
+.hermes-eyes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hermes-eyes span {
+  position: absolute;
+  left: 66.67%;
+  top: 31.45%;
+  width: 0.52%;
+  height: 0.36%;
+  border-radius: 50%;
+  background: #fff1bb;
+  box-shadow:
+    0 0 4px 2px #ffe6a6,
+    0 0 12px 4px #d6a24c,
+    0 0 25px 6px #ad792e88;
+  animation: hermes-awakening 3.8s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+.hermes-eyes span + span {
+  left: 68.45%;
+}
+.ai-chapter[hidden] .hermes-eyes span {
+  animation-play-state: paused;
+}
+@keyframes hermes-awakening {
+  0%,
+  100% {
+    opacity: 0.4;
+    filter: brightness(0.8);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+}
+@media (max-width: 760px) {
+  .ai-copy {
+    left: 5%;
+    top: 58%;
+    width: 37%;
+    height: 28%;
+    padding: 4px;
+  }
+  .ai-topics {
+    grid-template-columns: 1fr;
+  }
+  .ai-copy > p,
+  .ai-topics p {
+    font-size: 10px;
+  }
+  .ai-topics h2 {
+    font-size: 12px;
+  }
+  .hermes-eyes span {
+    box-shadow:
+      0 0 2px #ffe6a6,
+      0 0 6px 2px #d6a24c;
+  }
+  .ai-chapter::before {
+    left: 4%;
+    top: 57%;
+    width: 39%;
+    height: 30%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hermes-eyes span {
+    animation: none;
+    opacity: 0.65;
+  }
+}

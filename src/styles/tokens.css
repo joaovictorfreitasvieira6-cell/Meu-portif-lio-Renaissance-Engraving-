@@ -1,0 +1,26 @@
+:root {
+  color-scheme: light;
+  --paper: #ede9df;
+  --ink: #272923;
+  --muted: #74664f;
+  --accent: #794231;
+  --line: #bbaa8e;
+  --font-reading: 'Cormorant Garamond', Garamond, Georgia, serif;
+  --font-engineering: 'EB Garamond', Garamond, Georgia, serif;
+  --font-code: 'Courier New', monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --layer-art: 0;
+  --layer-effects: 1;
+  --layer-controls: 2;
+  --layer-intro: 3;
+  --layer-trail: 8;
+  --layer-social: 11;
+  --layer-music: 12;
+  --layer-transition: 20;
+}

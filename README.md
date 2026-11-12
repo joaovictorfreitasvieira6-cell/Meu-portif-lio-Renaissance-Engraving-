@@ -1,11 +1,10 @@
- Entre a melancolia e a máquina
+Entre a melancolia e a máquina
 
 ### Portfólio de João Victor · Desenvolvimento, DevOps e inteligência artificial
 
 > Há pensamentos que precisam de silêncio para se tornarem criação.
 
 <img width="1919" height="988" alt="image" src="https://github.com/user-attachments/assets/f5a8f4be-1e61-4e69-883a-93c7aff37615" />
-
 
 Este portfólio reúne meu trabalho, meus estudos e uma parte da maneira como percebo o mundo. A engenharia aparece ao lado de gravuras antigas; os circuitos atravessam o cérebro; os servidores dividem espaço com figuras aladas, instrumentos de medida e um tabuleiro de xadrez.
 
@@ -130,6 +129,5 @@ Os testes cobrem navegação, transições, abas, janelas de leitura e comportam
 Sou **João Victor**, estudante de Análise e Desenvolvimento de Sistemas, com interesses em backend, DevOps, automação, infraestrutura e inteligência artificial. Gosto de compreender o que sustenta um sistema e encontrar maneiras de tornar sua operação mais clara e confiável.
 
 No portfólio também estão meus interesses por livros, pesquisa, jogos, cinema, treino e estudo de inglês. São partes do repertório que levo para a maneira como penso e construo.
-
 
 > Que a curiosidade mantenha o pensamento em movimento — e que a coragem nos ajude a encontrar a próxima jogada.
