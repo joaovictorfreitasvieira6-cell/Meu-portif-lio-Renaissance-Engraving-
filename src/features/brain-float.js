@@ -1,6 +1,6 @@
 const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
-// One contour is shared by the moving engraving and the hole in the still artwork.
+// The still artwork stays intact underneath the moving engraving.
 const BRAIN_CONTOUR = [
   'M 1002 119',
   'C 950 103 914 115 885 132 C 848 115 801 143 782 168',
@@ -29,13 +29,8 @@ export function initBrainFloat({ reducedMotion }) {
     <g class="floating-brain-layer"><g clip-path="url(#brain-float-contour)">
       <image width="1779" height="884"/>
     </g></g>`;
-  const mask = `<svg xmlns="${SVG_NAMESPACE}" viewBox="0 0 1779 884" preserveAspectRatio="none"><path fill="white" fill-rule="evenodd" d="M0 0H1779V884H0Z ${BRAIN_CONTOUR}"/></svg>`;
   const image = svg.querySelector('image');
   function enable() {
-    hero.style.setProperty(
-      '--brain-cutout',
-      `url("data:image/svg+xml,${encodeURIComponent(mask)}")`,
-    );
     hero.classList.add('brain-float-enabled');
   }
   image.addEventListener('load', enable, { once: true });
@@ -45,7 +40,6 @@ export function initBrainFloat({ reducedMotion }) {
   return () => {
     image.removeEventListener('load', enable);
     hero.classList.remove('brain-float-enabled');
-    hero.style.removeProperty('--brain-cutout');
     svg.remove();
   };
 }

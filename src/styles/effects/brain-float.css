@@ -8,12 +8,6 @@
   overflow: visible;
 }
 
-.brain-float-enabled > .reference-art {
-  mask-image: var(--brain-cutout);
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-}
-
 .floating-brain-layer,
 .brain-float-enabled .energy-brain {
   animation: brain-levitation 7s ease-in-out infinite;
@@ -39,9 +33,6 @@
 @media (prefers-reduced-motion: reduce) {
   .floating-brain {
     display: none;
-  }
-  .brain-float-enabled > .reference-art {
-    mask-image: none;
   }
   .brain-float-enabled .energy-brain {
     animation: none;
