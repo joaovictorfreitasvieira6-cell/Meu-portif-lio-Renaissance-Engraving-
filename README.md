@@ -4,7 +4,8 @@
 
 > Há pensamentos que precisam de silêncio para se tornarem criação.
 
-![Mente e máquina: gravura, anatomia e circuitos na abertura do portfólio](assets/a75887ea-8b36-49fa-b4a4-6015045dc380.png)
+<img width="1919" height="988" alt="image" src="https://github.com/user-attachments/assets/f5a8f4be-1e61-4e69-883a-93c7aff37615" />
+
 
 Este portfólio reúne meu trabalho, meus estudos e uma parte da maneira como percebo o mundo. A engenharia aparece ao lado de gravuras antigas; os circuitos atravessam o cérebro; os servidores dividem espaço com figuras aladas, instrumentos de medida e um tabuleiro de xadrez.
 
