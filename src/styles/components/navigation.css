@@ -124,8 +124,10 @@ button.art-link:hover {
   text-decoration: underline;
 }
 body:has(.ai-chapter:not([hidden])) .social-links {
-  background: #15130fd9;
-  color: #dcc49a;
+  top: 24px;
+  background: #050505b3;
+  color: #ded8ce;
+  border-color: #77706466;
 }
 @media (max-width: 760px) {
   .chapter-button {

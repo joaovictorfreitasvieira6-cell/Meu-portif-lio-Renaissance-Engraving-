@@ -1,0 +1,357 @@
+/* The art stage keeps desktop effects calibrated to their source image. */
+.art-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+}
+
+.mobile-chapter-header,
+.mobile-chapter-copy {
+  display: none;
+}
+
+.chapter-navigation {
+  display: contents;
+}
+
+@media (max-width: 960px) {
+  .reference-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-x: clip;
+    overflow-y: auto;
+  }
+
+  .reference-page:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  .reference-page main {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .reference-page .reference-hero {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: 100svh;
+    overflow: clip;
+    aspect-ratio: auto;
+    line-height: 1.6;
+  }
+
+  .reference-page .reference-hero[hidden] {
+    display: none;
+  }
+
+  .mobile-chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 72px;
+    padding: max(12px, env(safe-area-inset-top)) 20px 12px;
+    border-bottom: 1px solid #a18d6c40;
+  }
+
+  .mobile-brand {
+    font-family: var(--font-engineering);
+    font-size: 30px;
+    color: var(--accent);
+  }
+
+  .mobile-chapter-count {
+    max-width: 80px;
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--muted);
+  }
+
+  .reference-hero > .art-stage {
+    height: auto;
+    aspect-ratio: 1779 / 884;
+    overflow: hidden;
+    border-bottom: 1px solid #a18d6c40;
+  }
+
+  .ai-chapter > .art-stage {
+    aspect-ratio: 1;
+  }
+
+  .hermes-figure {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    transform: none;
+    mask-image: linear-gradient(180deg, transparent 4.5%, #000 10%);
+    mask-composite: add;
+  }
+
+  .reference-page .art-stage > .reference-art,
+  .reference-page .art-stage > .hermes-composition {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  /* Replace the miniature text/hotspots with readable text and real touch controls. */
+  .art-stage > nav,
+  .art-stage > .art-link,
+  .art-stage > .architecture-note,
+  .art-stage > .engineering-intro,
+  .art-stage > .personal-tabs,
+  .art-stage > .thanks-copy,
+  .art-stage > .ai-copy {
+    display: none;
+  }
+
+  .mobile-chapter-copy {
+    display: block;
+    max-width: 680px;
+    margin-inline: auto;
+    padding: 30px 24px 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-chapter-copy .eyebrow {
+    margin-bottom: 16px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .mobile-chapter-copy h1 {
+    margin: 0 0 24px;
+    font-size: clamp(42px, 10vw, 64px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .mobile-chapter-copy h1 em {
+    display: block;
+  }
+
+  .mobile-chapter-copy > p {
+    margin: 0 0 18px;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .mobile-chapter-copy .mobile-lead {
+    font-size: 24px;
+    line-height: 1.35;
+    color: var(--accent);
+  }
+
+  .mobile-chapter-actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .mobile-chapter-actions button {
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid #947b5666;
+    background: #e4d9c250;
+    font-size: 18px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .chapter-navigation {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 680px;
+    margin-inline: auto;
+    padding: 12px 24px calc(80px + env(safe-area-inset-bottom));
+  }
+
+  .reference-hero .chapter-navigation .chapter-button {
+    position: static;
+    flex: 1 1 140px;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .social-links {
+    position: absolute;
+    top: max(14px, env(safe-area-inset-top));
+    right: max(16px, env(safe-area-inset-right));
+    gap: 10px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .music-player,
+  .music-player:hover,
+  .music-player:focus-within {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    padding: 2px;
+    opacity: 0.9;
+    border-radius: 24px;
+  }
+
+  .music-player .music-toggle {
+    width: 44px;
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .music-player:is(:hover, :focus-within) > label {
+    display: block;
+    padding-inline: 8px;
+  }
+
+  .music-player:is(:hover, :focus-within) .music-label {
+    display: none;
+  }
+
+  .intro-controls {
+    bottom: 8px;
+    padding: 0 10px;
+  }
+
+  .intro-controls > span {
+    display: none;
+  }
+
+  .intro-controls button {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .profile-dialog {
+    width: calc(100% - 16px);
+    max-width: none;
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px);
+    margin: auto;
+    border-width: 3px;
+  }
+
+  .profile-dialog > header {
+    padding: 10px 14px;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .close-profile,
+  .close-manuscript {
+    min-height: 44px;
+    padding-inline: 10px;
+    font-size: 16px;
+  }
+
+  .profile-tablist {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    padding-inline: 8px;
+  }
+
+  .profile-tablist button {
+    min-height: 44px;
+    padding: 8px 4px;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+
+  #profile-panel {
+    padding: 24px 20px calc(32px + env(safe-area-inset-bottom));
+    font-size: 19px;
+    line-height: 1.65;
+    overscroll-behavior: contain;
+    overflow-wrap: anywhere;
+  }
+
+  #profile-panel h2 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+
+  #profile-panel h3 {
+    font-size: 27px;
+  }
+
+  #profile-panel ul,
+  .manuscript ul {
+    padding-left: 22px;
+  }
+
+  .manuscript {
+    width: calc(100% - 16px);
+    max-height: calc(100dvh - 16px);
+    margin: auto;
+    padding: 20px;
+    border-width: 3px;
+    font-size: 19px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    overscroll-behavior: contain;
+  }
+
+  .manuscript h2 {
+    font-size: 36px;
+  }
+
+  .ai-chapter::before {
+    display: none;
+  }
+
+  .ai-chapter .mobile-brand,
+  .ai-chapter .mobile-lead,
+  .ai-chapter .mobile-chapter-copy h1 em {
+    color: var(--hermes-accent);
+  }
+
+  .ai-chapter .mobile-chapter-count {
+    color: var(--hermes-body);
+  }
+
+  .ai-chapter .mobile-chapter-actions button {
+    color: var(--hermes-heading);
+    background: #aaaaaa0a;
+    border-color: #777064;
+  }
+
+  .mobile-ai-topics {
+    display: grid;
+    gap: 22px;
+    margin-block: 24px;
+  }
+
+  .mobile-ai-topics h2 {
+    margin: 0 0 8px;
+    font-size: 27px;
+    color: var(--hermes-heading);
+  }
+
+  .mobile-ai-topics p {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+}

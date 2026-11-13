@@ -1,7 +1,8 @@
 export function initBrainIntro() {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   if (reduced.matches) return;
-  const hero = document.querySelector('.reference-hero');
+  const chapter = document.querySelector('.reference-hero');
+  const hero = chapter.querySelector('.art-stage') ?? chapter;
   const image = hero.querySelector('.reference-art');
   const canvas = document.createElement('canvas');
   canvas.className = 'brain-reconstruction';
@@ -28,7 +29,7 @@ export function initBrainIntro() {
     start = null,
     finished = false;
   const particles = [];
-  const count = innerWidth < 760 ? 260 : 560;
+  const count = innerWidth <= 960 ? 180 : 560;
   // Normalized positions follow the brain in the original full composition.
   for (let i = 0; i < count; i++) {
     const angle = Math.random() * Math.PI * 2;
@@ -65,15 +66,15 @@ export function initBrainIntro() {
     removeEventListener('resize', resize);
     observer.disconnect();
     reduced.removeEventListener('change', onPreference);
-    if (restoreFocus) hero.querySelector('.next-chapter').focus({ preventScroll: true });
+    if (restoreFocus) chapter.querySelector('.next-chapter')?.focus({ preventScroll: true });
   }
   function onPreference(event) {
     if (event.matches) finish();
   }
   const observer = new MutationObserver(() => {
-    if (hero.hidden) finish();
+    if (chapter.hidden) finish();
   });
-  observer.observe(hero, { attributes: true, attributeFilter: ['hidden'] });
+  observer.observe(chapter, { attributes: true, attributeFilter: ['hidden'] });
   skip.addEventListener('click', finish);
   reduced.addEventListener('change', onPreference);
   addEventListener('resize', resize);

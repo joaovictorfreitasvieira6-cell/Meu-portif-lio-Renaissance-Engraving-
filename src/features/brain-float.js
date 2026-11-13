@@ -35,7 +35,7 @@ export function initBrainFloat({ reducedMotion }) {
   }
   image.addEventListener('load', enable, { once: true });
   image.setAttribute('href', source.getAttribute('src'));
-  hero.append(svg);
+  (hero.querySelector('.art-stage') ?? hero).append(svg);
 
   return () => {
     image.removeEventListener('load', enable);

@@ -2,6 +2,8 @@ import { site } from './config/site.js';
 import { manuscripts } from './content/manuscripts.js';
 import { profileContent } from './content/profile.js';
 import { terminalContent } from './content/terminals.js';
+import { mobileChapters } from './content/mobile-chapters.js';
+import { initResponsiveLayout } from './ui/responsive-layout.js';
 import { createScope } from './core/disposable.js';
 import { createChapterRouter } from './core/chapter-router.js';
 import { createAudioController } from './core/audio-controller.js';
@@ -18,15 +20,22 @@ import { initTerminals } from './features/terminals.js';
 
 const scope = createScope();
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const chapters = site.chapters.map((id) => document.getElementById(id));
+scope.add(initResponsiveLayout({ chapters, content: mobileChapters }));
 const transition = createPageTransition({
   curtain: document.querySelector('.page-transition'),
   body: document.body,
   reducedMotion,
 });
 const router = createChapterRouter({
-  chapters: site.chapters.map((id) => document.getElementById(id)),
+  chapters,
   transition,
 });
+scope.add(
+  router.subscribe(() => {
+    if (matchMedia('(max-width: 960px)').matches) window.scrollTo?.(0, 0);
+  }),
+);
 const manuscript = createManuscriptDialog({
   element: document.querySelector('.manuscript'),
   content: manuscripts,
