@@ -34,6 +34,7 @@ export function initMechanisms() {
     svg.append(window);
   });
   svg.append(make('path', { class: 'sand-fall', d: 'M1461 708 L1461 753' }));
-  document.querySelector('.second-chapter').append(svg);
+  const chapter = document.querySelector('.second-chapter');
+  (chapter.querySelector('.art-stage') ?? chapter).append(svg);
   return () => svg.remove();
 }

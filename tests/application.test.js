@@ -58,6 +58,8 @@ test('application initializes and preserves the complete six-chapter flow', asyn
   assert.equal(document.querySelectorAll('.social-links').length, 1);
   assert.equal(document.querySelectorAll('.music-player').length, 1);
   assert.equal(document.querySelectorAll('.mechanisms').length, 1);
+  assert.equal(document.querySelectorAll('.art-stage').length, 6);
+  assert.equal(document.querySelectorAll('.mobile-chapter-copy').length, 6);
   assert.match(document.querySelector('.note-copy').textContent, /arquitetura intencional/);
 
   for (const id of ['solutions', 'engineering', 'portrait', 'hermes', 'thanks', 'mind']) {

@@ -76,6 +76,12 @@ O site funciona com **HTML, CSS e JavaScript nativos**, sem framework de interfa
 
 A tipografia dos textos editáveis utiliza **Cormorant Garamond** e **EB Garamond**. Textos incorporados às imagens fazem parte da própria arte.
 
+### No celular
+
+Em telas de até 960 px, cada capítulo apresenta a gravura proporcional no topo e uma versão legível do conteúdo abaixo. Os botões de navegação possuem áreas maiores para toque; as janelas de leitura adaptam sua altura à tela, com abas em duas colunas e rolagem interna. O player permanece discreto, e a abertura utiliza menos partículas.
+
+As animações continuam posicionadas em relação à gravura, independentemente da altura do texto. A navegação entre capítulos retorna ao topo. A composição de desktop permanece em tela cheia.
+
 ### Organização do código
 
 ```text
