@@ -79,6 +79,18 @@
     border-bottom: 1px solid #a18d6c40;
   }
 
+  .ai-chapter > .art-stage {
+    aspect-ratio: 1;
+  }
+
+  .hermes-figure {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    transform: none;
+  }
+
   .reference-page .art-stage > .reference-art,
   .reference-page .art-stage > .hermes-composition {
     width: 100%;

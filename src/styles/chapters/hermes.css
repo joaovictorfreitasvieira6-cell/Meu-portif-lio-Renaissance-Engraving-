@@ -1,84 +1,96 @@
-.ai-chapter {
+﻿.ai-chapter {
   min-height: 0;
-  aspect-ratio: 1779/884;
+  aspect-ratio: 1779 / 884;
   overflow: hidden;
   background: #080807;
   color: #e5dcc7;
   line-height: 1.6;
   isolation: isolate;
 }
-/* Mask text already baked into the artwork, beneath the live description. */
-.ai-chapter::before {
-  content: '';
+
+.hermes-figure {
   position: absolute;
-  left: 5%;
-  top: 58%;
-  width: 37.5%;
-  height: 29%;
-  background: #090908;
-  pointer-events: none;
-  z-index: var(--layer-art);
+  right: 0;
+  top: 50%;
+  width: min(64%, 100svh);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
 }
+
+.hermes-figure .hermes-composition {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .hermes-projects {
-  left: 6%;
-  top: 91%;
-  width: 17%;
-  height: 5%;
+  display: none;
 }
+
 .ai-copy {
   position: absolute;
-  left: 6%;
-  top: 59%;
-  width: 35%;
-  height: 27%;
+  left: 5%;
+  top: 14%;
+  width: 37%;
+  height: 76%;
   z-index: var(--layer-effects);
-  padding: 10px 12px;
-  background: #090908;
+  padding: 12px 20px 24px 0;
+  background: linear-gradient(90deg, #080807 85%, #08080700);
   overflow: auto;
   scrollbar-width: thin;
-  scrollbar-color: #88704c #090908;
+  scrollbar-color: #88704c #080807;
   line-height: 1.6;
 }
-.ai-copy > h1,
-.ai-copy > .eyebrow,
-.ai-copy > .ai-lead {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
+
+.ai-copy > .eyebrow {
+  color: #c6a77c;
+  margin-bottom: 22px;
+}
+.ai-copy > h1 {
+  margin: 0 0 24px;
+  font-size: clamp(44px, 5vw, 94px);
+  line-height: 0.95;
+}
+.ai-copy > h1 em {
+  color: #c6a77c;
 }
 .ai-copy > p {
-  font-size: clamp(10px, 0.8vw, 15px);
+  font-size: clamp(14px, 1vw, 19px);
   margin: 0 0 var(--space-4);
   max-width: 570px;
   color: #c4beae;
 }
+.ai-copy > .ai-lead {
+  color: #e5dcc7;
+  font-size: clamp(20px, 1.6vw, 29px);
+  line-height: 1.35;
+  margin-bottom: 24px;
+}
 .ai-topics {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-3) 20px;
+  gap: 20px;
+  margin-top: 24px;
 }
 .ai-topics h2 {
-  font-size: clamp(12px, 1vw, 19px);
+  font-size: clamp(17px, 1.3vw, 24px);
   margin: 0 0 var(--space-2);
   color: #dac49e;
 }
 .ai-topics p {
-  font-size: clamp(10px, 0.78vw, 15px);
+  font-size: clamp(13px, 0.9vw, 17px);
   margin: 0 0 var(--space-3);
   color: #c4beae;
 }
 .ai-project-button {
   padding: 12px 0;
-  margin-top: 5px;
+  margin-top: 10px;
   border: 0;
   border-bottom: 1px solid #b29468;
   background: none;
   color: #dac49e;
-  font-size: clamp(10px, 0.8vw, 15px);
+  font-size: 16px;
 }
 .ai-chapter .previous-chapter {
   left: 3%;
@@ -87,6 +99,32 @@
   background: #171611dc;
   color: #dac49e;
 }
+.hermes-navigation .visually-hidden {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+}
+.hermes-navigation {
+  position: absolute;
+  right: 5%;
+  top: 4%;
+  z-index: var(--layer-controls);
+  display: flex;
+  gap: 24px;
+}
+.hermes-navigation .art-link {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  color: #dac49e;
+  font-size: 13px;
+  line-height: 1.5;
+}
 .hermes-eyes {
   position: absolute;
   inset: 0;
@@ -94,10 +132,10 @@
 }
 .hermes-eyes span {
   position: absolute;
-  left: 66.67%;
-  top: 31.45%;
-  width: 0.52%;
-  height: 0.36%;
+  left: 46.4%;
+  top: 24.5%;
+  width: 0.8%;
+  height: 0.4%;
   border-radius: 50%;
   background: #fff1bb;
   box-shadow:
@@ -108,7 +146,8 @@
   mix-blend-mode: screen;
 }
 .hermes-eyes span + span {
-  left: 68.45%;
+  left: 49.8%;
+  top: 24.8%;
 }
 .ai-chapter[hidden] .hermes-eyes span {
   animation-play-state: paused;
@@ -122,36 +161,6 @@
   50% {
     opacity: 1;
     filter: brightness(1.5);
-  }
-}
-@media (max-width: 760px) {
-  .ai-copy {
-    left: 5%;
-    top: 58%;
-    width: 37%;
-    height: 28%;
-    padding: 4px;
-  }
-  .ai-topics {
-    grid-template-columns: 1fr;
-  }
-  .ai-copy > p,
-  .ai-topics p {
-    font-size: 10px;
-  }
-  .ai-topics h2 {
-    font-size: 12px;
-  }
-  .hermes-eyes span {
-    box-shadow:
-      0 0 2px #ffe6a6,
-      0 0 6px 2px #d6a24c;
-  }
-  .ai-chapter::before {
-    left: 4%;
-    top: 57%;
-    width: 39%;
-    height: 30%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
