@@ -89,6 +89,8 @@
     top: auto;
     width: 100%;
     transform: none;
+    mask-image: linear-gradient(180deg, transparent 4.5%, #000 10%);
+    mask-composite: add;
   }
 
   .reference-page .art-stage > .reference-art,
@@ -322,17 +324,17 @@
   .ai-chapter .mobile-brand,
   .ai-chapter .mobile-lead,
   .ai-chapter .mobile-chapter-copy h1 em {
-    color: #c6a77c;
+    color: var(--hermes-accent);
   }
 
   .ai-chapter .mobile-chapter-count {
-    color: #b8ad94;
+    color: var(--hermes-body);
   }
 
   .ai-chapter .mobile-chapter-actions button {
-    color: #e5dcc7;
-    background: #bba47712;
-    border-color: #bba47770;
+    color: var(--hermes-heading);
+    background: #aaaaaa0a;
+    border-color: #777064;
   }
 
   .mobile-ai-topics {
@@ -344,7 +346,7 @@
   .mobile-ai-topics h2 {
     margin: 0 0 8px;
     font-size: 27px;
-    color: #dac49e;
+    color: var(--hermes-heading);
   }
 
   .mobile-ai-topics p {
